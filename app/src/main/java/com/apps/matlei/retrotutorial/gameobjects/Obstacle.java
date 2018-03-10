@@ -13,15 +13,10 @@ public class Obstacle implements GameObject {
 
     private Rect rectangle;
     private int color;
-    // The obstacle is like two rectangles with a gap in between it:
-    private int startX;
-    private int playerGap;
 
-    public Obstacle(Rect rect, int color, int startX, int playerGap) {
+    public Obstacle(Rect rect, int color) {
         this.rectangle = rect;
         this.color = color;
-        this.startX = startX;
-        this.playerGap = playerGap;
     }
 
     public Rect getRectangle() {
