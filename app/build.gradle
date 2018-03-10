@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.apps.matlei.retrotutorial"
+        minSdkVersion 18
+        targetSdkVersion 18
+        versionCode 1
+        versionName "1.0"
+        // AndroidJUnitRunner is specified as value for the testInstrumentationRunner parameter in the build file of your app
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    // to run unit tests
+    testImplementation 'junit:junit:4.12'
+
+    // runner for instrumentation tests
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    // Espresso UI Testing
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    // add this for intent mocking support
+    androidTestCompile 'com.android.support.test.espresso:espresso-intents:3.0.1'
+
+    // add this for webview testing support
+    androidTestCompile 'com.android.support.test.espresso:espresso-web:3.0.1'
+}
