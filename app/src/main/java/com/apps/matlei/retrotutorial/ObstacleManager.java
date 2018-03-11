@@ -3,6 +3,7 @@ package com.apps.matlei.retrotutorial;
 import android.graphics.Canvas;
 
 import com.apps.matlei.retrotutorial.gameobjects.Obstacle;
+import com.apps.matlei.retrotutorial.gameobjects.RectPlayer;
 
 import java.util.ArrayList;
 
@@ -58,6 +59,21 @@ public class ObstacleManager {
             obstacles.add(new Obstacle(obstacleHeight, color, xStart, currY, playerGap));
             currY += obstacleHeight + obstacleGap;
         }
+    }
+
+    /**
+     * Loops through all the obstacles and checks if player collides with any of them.
+     *
+     * @param player
+     * @return true player collides with any obstacle, false if no collision
+     */
+    public boolean playerCollide(RectPlayer player) {
+        for (Obstacle ob : obstacles) {
+            if (ob.playerCollide(player)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
