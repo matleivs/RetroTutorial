@@ -21,7 +21,7 @@ public class Obstacle implements GameObject {
         this.color = color;
         // l,t,r,b.
         // The obstacle will be two rectangles with a gap in between it:
-        this.rectangle =  new Rect(0, startY, startX, startY + rectHeight);
+        this.rectangle = new Rect(0, startY, startX, startY + rectHeight);
         this.rectangle2 = new Rect(startX + playerGap, startY, Constants.SCREEN_WIDTH, startY + rectHeight);
     }
 
@@ -30,7 +30,7 @@ public class Obstacle implements GameObject {
     }
 
 
-    public void incrementY(float y){
+    public void incrementY(float y) {
         rectangle.top += y;
         rectangle.bottom += y;
         rectangle2.top += y;
@@ -39,17 +39,13 @@ public class Obstacle implements GameObject {
 
     /**
      * Method to check if the player is colliding with an obstacle
+     * (check if the rectangle contains the top left/ top right/ bottom left/ bottom right coordinate of the player rectangle)
      *
      * @param player
      * @return true if collision
      */
-    public boolean playerCollide(RectPlayer player){
-        // later: fill in a player interface, so we can use all kinds of player objects not just rectplayers
-        // check if the rectangle contains the top left/ top right/ bottom left/ bottom right coordinate of the player rectangle
-        return ( rectangle.contains(player.getRectangle().left, player.getRectangle().top)
-                || rectangle.contains(player.getRectangle().right, player.getRectangle().top)
-                || rectangle.contains(player.getRectangle().left, player.getRectangle().bottom)
-                || rectangle.contains(player.getRectangle().right, player.getRectangle().bottom));
+    public boolean playerCollide(RectPlayer player) {
+        return Rect.intersects(rectangle, player.getRectangle()) || Rect.intersects(rectangle2, player.getRectangle());
     }
 
 
