@@ -1,7 +1,7 @@
 package com.apps.matlei.retrotutorial;
 
 /**
- * @author Leïli Nikbin <nikbin@itemis.de>
+ * @author lei vs <matleivs@gmail.com>
  */
 public class Constants {
 

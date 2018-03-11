@@ -9,7 +9,7 @@ import com.apps.matlei.retrotutorial.Constants;
 /**
  * These objects will move downstream the screen and the player has to evade them.
  *
- * @author Leïli Nikbin <nikbin@itemis.de>
+ * @author lei vs <matleivs@gmail.com>
  */
 public class Obstacle implements GameObject {
 

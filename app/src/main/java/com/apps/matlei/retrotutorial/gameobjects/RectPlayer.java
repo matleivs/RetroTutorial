@@ -5,10 +5,10 @@ import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
 
-import com.apps.matlei.retrotutorial.gameobjects.GameObject;
-
 /**
- * @author Leïli Nikbin <nikbin@itemis.de>
+ * RectPlayer is a type of GameObject
+ *
+ * @author lei vs <matleivs@gmail.com>
  */
 public class RectPlayer implements GameObject {
 

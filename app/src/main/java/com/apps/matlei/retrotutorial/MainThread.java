@@ -6,7 +6,7 @@ import android.view.SurfaceHolder;
 /**
  * The "meat" class of our game.
  *
- * @author Leïli Nikbin <nikbin@itemis.de>
+ * @author lei vs <matleivs@gmail.com>
  */
 public class MainThread extends Thread {
 

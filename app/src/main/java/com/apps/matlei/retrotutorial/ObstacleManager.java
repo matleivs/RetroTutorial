@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * Manager for moving the objects the player has to avoid down the screen.
  * Keep instantiating obstacle objects as they go off-screen
  *
- * @author Leïli Nikbin <nikbin@itemis.de>
+ * @author lei vs <matleivs@gmail.com>
  */
 public class ObstacleManager {
     // Note: higher index in arraylist = lower on screen = higher y value

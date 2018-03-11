@@ -6,6 +6,9 @@ import android.util.DisplayMetrics;
 import android.view.Window;
 import android.view.WindowManager;
 
+/**
+ * @author lei vs <matleivs@gmail.com>
+ */
 public class MainActivity extends Activity {
 
     @Override

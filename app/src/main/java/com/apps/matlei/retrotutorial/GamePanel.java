@@ -13,7 +13,9 @@ import android.view.SurfaceView;
 import com.apps.matlei.retrotutorial.gameobjects.RectPlayer;
 
 /**
- * @author Leïli Nikbin <nikbin@itemis.de>
+ * Game Panel class
+ *
+ * @author lei vs <matleivs@gmail.com>
  */
 class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     private MainThread thread;
@@ -39,7 +41,7 @@ class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
         // instantiate Player; Color.rgb = static class, takes in the red, green, and blue value of a color & convert to corresponding integer
         player = new RectPlayer(new Rect(100, 100, 200, 200), Color.rgb(255, 0, 0));
         // start position of the player: middle of the screen's width, and 3 /4 down of the screen's height
-        playerPoint = new Point(Constants.SCREEN_WIDTH/2,3*Constants.SCREEN_HEIGHT/4);
+        playerPoint = new Point(Constants.SCREEN_WIDTH / 2, 3 * Constants.SCREEN_HEIGHT / 4);
         // to align the player to the playerPoint:
         player.update(playerPoint);
 
@@ -94,14 +96,14 @@ class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
                 }
                 // show game over screen for 2 secs, before user can tap on screen and set gameover to false & reset game
 //                if(gameOver && System.currentTimeMillis() - gameOverTime >= 2000){ <-- WIP this is not working, the app freezes at game over screen and never resets
-                if(gameOver){
+                if (gameOver) {
                     reset();
                 }
                 break;
             case MotionEvent.ACTION_MOVE:
                 if (!gameOver && movingPlayer) {
                     // set the player to where the finger touched the screen
-                    playerPoint.set((int) motionEvent.getX(), (int) motionEvent.getY()); 
+                    playerPoint.set((int) motionEvent.getX(), (int) motionEvent.getY());
                 }
                 break;
             case MotionEvent.ACTION_UP:
@@ -119,7 +121,7 @@ class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
      */
     private void reset() {
         //reset position of player back into starting position
-        playerPoint = new Point(Constants.SCREEN_WIDTH/2, 3*Constants.SCREEN_HEIGHT/4);
+        playerPoint = new Point(Constants.SCREEN_WIDTH / 2, 3 * Constants.SCREEN_HEIGHT / 4);
         player.update(playerPoint);
         obstacleManager = new ObstacleManager(200, 350, 75, Color.BLACK);
         movingPlayer = false;
@@ -136,7 +138,7 @@ class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
             player.update(playerPoint); // playerPoint = where it should be
             obstacleManager.update();
         }
-        if(obstacleManager.playerCollide(player)){
+        if (obstacleManager.playerCollide(player)) {
             gameOver = true;
             gameOverTime = System.currentTimeMillis();
         }
@@ -160,7 +162,7 @@ class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
         obstacleManager.draw(canvas);
 
         // on GameOver, we wanna draw a "game over" text on the screen
-        if(gameOver){
+        if (gameOver) {
             Paint paint = new Paint();
             paint.setTextSize(100);
             paint.setColor(Color.MAGENTA);
