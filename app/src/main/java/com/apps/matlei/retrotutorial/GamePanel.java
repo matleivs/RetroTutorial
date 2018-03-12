@@ -46,7 +46,7 @@ class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
         player.update(playerPoint);
 
 
-        obstacleManager = new ObstacleManager(200, 350, 75, Color.BLACK);
+        obstacleManager = new ObstacleManager(getContext(), 200, 350, 75, Color.BLACK);
         // now we need to handle the portion in which this point changes position corresponding to where we touch
 
         setFocusable(true);
@@ -123,7 +123,7 @@ class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
         //reset position of player back into starting position
         playerPoint = new Point(Constants.SCREEN_WIDTH / 2, 3 * Constants.SCREEN_HEIGHT / 4);
         player.update(playerPoint);
-        obstacleManager = new ObstacleManager(200, 350, 75, Color.BLACK);
+        obstacleManager = new ObstacleManager(getContext(),200, 350, 75, Color.BLACK);
         movingPlayer = false;
         gameOver = false;
     }
@@ -154,7 +154,7 @@ class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     public void draw(Canvas canvas) {
         super.draw(canvas);
         // fill the screen with color --> make the canvas solid yellow except for our player then
-        canvas.drawColor(Color.YELLOW);
+        canvas.drawColor(Color.WHITE);
 
         // draw the player on the screen
         player.draw(canvas);

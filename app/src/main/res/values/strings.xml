@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">RetroTutorial</string>
     <string name="gameOver">Game Over</string>
+    <string name="score">Score:</string>
 </resources>
